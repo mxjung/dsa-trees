@@ -54,7 +54,20 @@ class Tree {
    * whose value is greater than lowerBound. */
 
   numGreater(lowerBound) {
+    // check if root is null (edge case when Tree is empty)
+    if (this.root === null) {
+      return 0;
+    }
 
+    function countGreater(node) {
+      let count = node.val > lowerBound ? 1 : 0;
+
+      for (let child of node.children) {
+        count = count + countGreater(child);
+      }
+      return count;
+    }
+    return countGreater(this.root);
   }
 }
 

@@ -24,7 +24,7 @@ beforeEach(function() {
   largeTree = new BinaryTree(root);
 });
 
-xdescribe("minDepth", function() {
+describe("minDepth", function() {
   it("handles simple trees", function() {
     expect(smallTree.minDepth()).toBe(2);
   });

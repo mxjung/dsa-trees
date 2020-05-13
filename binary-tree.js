@@ -17,7 +17,16 @@ class BinaryTree {
    * the length of the shortest path from the root to a leaf. */
 
   minDepth() {
+    function minTree(node) {
+      // if node is either empty tree or end of branch
+      if (node === null) {
+        return 0;
+      }
 
+      // +1 for the node
+      return 1 + Math.min(minTree(node.left), minTree(node.right));
+    }
+    return minTree(this.root);
   }
 
   /** maxDepth(): return the maximum depth of the tree -- that is,
